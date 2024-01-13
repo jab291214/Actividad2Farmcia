@@ -16,6 +16,7 @@ namespace Actividad2Farmcia
         public FormConfirmacion()
         {
             InitializeComponent();
+            this.FormClosing += CerrarFormulario;
         }
         public void InfoConfirmacion(Pedido pedido)
         {
@@ -23,7 +24,25 @@ namespace Actividad2Farmcia
             {
                 this.Text = "Pedido al distribuidor " + pedido.Distribuidor;
                 lblinformacion.Text = pedido.Cantidad + " unidades del " + pedido.Tipo + " " + pedido.Nombremedicamento;
+
             }
+        }
+        private void CerrarFormulario(object sender, FormClosingEventArgs e)
+        {
+            // Evita que el formulario se cierre y, en su lugar, lo oculta
+            e.Cancel = true;
+            this.Hide();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        { 
+            this.Hide();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        { 
+            this.Hide();
+            MessageBox.Show("Guardado Correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

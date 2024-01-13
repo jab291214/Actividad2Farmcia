@@ -14,7 +14,14 @@ namespace Actividad2Farmcia
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            inp_text_nombre.Text= string.Empty;
+            inp_comb_tipomedicamento.SelectedIndex=0;
+            inp_text_cantidad.Text = "0";
+            inp_radb_cemefar.Checked= false;
+            inp_radb_empsaphar.Checked= false;
+            inp_radb_cofarma.Checked= false;
+            inp_check_principal.Checked= false;
+            inp_check_segundaria.Checked= false;
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -88,10 +95,8 @@ namespace Actividad2Farmcia
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }
-            
-            
+                MessageBox.Show(ex.Message,"",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            } 
         }
     }
 }

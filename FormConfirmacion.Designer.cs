@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             lblinformacion = new Label();
+            btnCancelar = new Button();
+            btnConfirmar = new Button();
             SuspendLayout();
             // 
             // lblinformacion
@@ -40,11 +42,33 @@
             lblinformacion.Size = new Size(0, 25);
             lblinformacion.TabIndex = 0;
             // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(165, 196);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(75, 23);
+            btnCancelar.TabIndex = 1;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnConfirmar
+            // 
+            btnConfirmar.Location = new Point(382, 196);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new Size(75, 23);
+            btnConfirmar.TabIndex = 2;
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
+            // 
             // FormConfirmacion
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(615, 337);
+            Controls.Add(btnConfirmar);
+            Controls.Add(btnCancelar);
             Controls.Add(lblinformacion);
             Name = "FormConfirmacion";
             Text = "FormConfirmacion";
@@ -55,5 +79,7 @@
         #endregion
 
         private Label lblinformacion;
+        private Button btnCancelar;
+        private Button btnConfirmar;
     }
 }
